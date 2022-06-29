@@ -1,0 +1,26 @@
+{
+  "name": "sweetaste",
+  "version": "1.0.0",
+  "description": "這是我第一次使用[設計稿](https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page)寫出來的、簡易的電商網站。\r Demo:[點這裡](https://rue1216.github.io/sweetaste--practice/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rue1216/Sweetaste.git"
+  },
+  "engines": {
+    "node": "16.13.1"
+  },
+  "author": "Rue Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rue1216/Sweetaste/issues"
+  },
+  "homepage": "https://github.com/Rue1216/Sweetaste#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
