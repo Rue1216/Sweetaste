@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Rue1216/Sweetaste#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "ejs-locals": "^1.0.2",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
   }
 }

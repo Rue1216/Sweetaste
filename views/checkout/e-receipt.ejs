@@ -1,0 +1,118 @@
+<% layout("../layout/layout") %> 
+<!-- content -->
+<section class="container my-sm-5 my-0 p-0">
+    <div class="row justify-content-center gx-5 m-0">
+        <!-- 資料填寫區塊 -->
+        <div class="col-lg-6 col-md-7 col p-0 px-sm-3">
+            <div class="row gx-3 bg-primary text-success justify-content-center align-items-center py-4">
+                <div class="col-5"><p class="h1 mb-0">發票</p></div>
+                <!-- 進度條 -->
+                <div class="col-5">
+                  <div class="row justify-content-center">
+                    <div class="col d-flex justify-content-between align-items-center">
+                      <div><i class="fas fa-check-circle"></i></div>
+                      <div class="connect-line border-success bg-success"></div>
+                      <div><i class="fas fa-check-circle"></i></div>
+                      <div class="connect-line border-success bg-success"></div>
+                      <div><i class="far fa-dot-circle"></i></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- 桌機版表單 -->
+            <form class="d-none d-sm-inline-flex row g-3 justify-content-center text-success bg-primary pb-5">
+                <div class="col-10">
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <a href="/checkout/e-receipt" class="active d-block btn btn-outline-success text-primary fs-5 rounded-0 fw-bold py-3">電子發票</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/checkout/mail-receipt" class="d-block btn btn-outline-success text-secondary fs-5 rounded-0 fw-bold py-3">郵寄發票</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <label for="email" class="fw-bold fs-5 form-label">電子郵件信箱</label>
+                    <input id="email" class="input-style form-control rounded-0 py-3" type="email" placeholder="example@email.com">
+                </div>
+                <div class="col-10">
+                    <label for="tax-id-number" class="form-label fw-bold fs-5">統一編號（選填）</label>
+                    <input id="tax-id-number" class="input-style form-control rounded-0 py-3" type="number" placeholder="12345678">
+                </div>
+            </form>
+            <!-- 手機版表單 -->
+            <form class="d-sm-none d-inline-flex row g-3 justify-content-center text-success bg-primary pb-5">
+                <div class="col-10">
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <a href="/checkout/e-receipt" class="active d-block btn btn-outline-success text-primary fs-5 rounded-0 fw-bold py-3">電子發票</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/checkout/mail-receipt" class="d-block btn btn-outline-success text-secondary fs-5 rounded-0 fw-bold py-3">郵寄發票</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <label for="email" class="fw-bold fs-5 form-label">電子郵件信箱</label>
+                    <input id="email" class="input-style form-control rounded-0 py-3" type="email" placeholder="example@email.com">
+                </div>
+                <div class="col-10">
+                    <label for="tax-id-number" class="form-label fw-bold fs-5">統一編號（選填）</label>
+                    <input id="tax-id-number" class="input-style form-control rounded-0 py-3" type="number" placeholder="12345678">
+                </div>
+            </form>
+            <!-- 下一步按鈕 -->
+            <div class="row g-3">
+                <a href="/checkout/success" class="btn btn-info rounded-0 text-primary fw-bold fs-4 py-3">確認結帳</a>
+            </div>
+        </div>
+        <!-- 訂單資訊 -->
+        <div class="col-lg-4 col-md-5 d-md-block d-none">
+            <!-- 訂單摘要 -->
+            <div class="row text-secondary p-0 mb-3">
+                <h3 class="py-3 bg-success fw-bold h4 text-center mb-0">訂單摘要</h3>
+                <div class="border border-1 border-success">
+                    <div class="row mb-2 mt-3">
+                        <div class="col-md-6"><span class="fw-light">小計</span></div>
+                        <div class="col-md-6 text-end"><span class="fw-light">NT$ 2,700</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><span class="fw-light">運費</span></div>
+                        <div class="col-md-6 text-end"><span class="fw-light">NT$ 700</span></div>
+                    </div>
+                    <div class="row fs-5 my-3">
+                        <div class="col-md-6"><span class="fw-bold">總計</span></div>
+                        <div class="col-md-6 text-end"><span class="fw-bold">NT$ 3,400</span></div>
+                    </div>
+                </div>    
+            </div>
+            <!-- 購物清單 -->
+            <div class="row text-secondary p-0">
+              <h3 class="py-3 bg-success fw-bold h4 text-center mb-0">購物清單</h3>
+              <ul class="border border-1 border-success">
+                  <li class="my-3 row justify-content-md-evenly align-items-center justify-content-center">
+                      <div class="bg-cover col-md-6 col-4" style="background-image: url(https://bit.ly/2QvsT63) ;height: 80px; width: 120px;"></div>
+                      <div class="col-6">
+                          <h2 class="fs-6">草莓奶酪杯(2)</h2>
+                          <span class="fs-5 fw-bold">NT$ 900</span>
+                      </div>
+                  </li>
+                  <li class="mb-3 row justify-content-md-evenly justify-content-center align-items-center ">
+                      <div class="bg-cover col-md-6 col-4" style="background-image: url(https://bit.ly/2zBDAxX) ;height: 80px; width: 120px;"></div>
+                      <div class="col-6">
+                          <h2 class="fs-6">奶油草莓派(2)</h2>
+                          <span class="fs-5 fw-bold">NT$ 900</span>
+                      </div>
+                  </li>
+                  <li class="mb-3 row justify-content-md-evenly justify-content-center align-items-center ">
+                      <div class="bg-cover col-md-6 col-4" style="background-image: url(https://bit.ly/2zKOP7w) ;height: 80px; width: 120px;"></div>
+                      <div class="col-6">
+                          <h2 class="fs-6">莓好繽紛塔(2)</h2>
+                          <span class="fs-5 fw-bold">NT$ 900</span>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</section>
