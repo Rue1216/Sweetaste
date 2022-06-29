@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁切版練習-甜點電商 Sweetaste</title>
+    <link rel="stylesheet" href="./scss/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container py-3">
+      <div class="container-fluid justify-content-between align-items-center">
+        <button class="navbar-toggler btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+          <img class="d-md-inline d-none" src="./assets/logo-all-dark.svg" style="width: 220px; height: 90px;" alt="logo-large">
+          <img class="d-md-none" src="./assets/logotype-sm-dark.svg" style="width: 115px; height: 18px;" alt="logo-large">
+        </a>
+        <a class="link-success text-primary fw-bold d-md-none" aria-current="cart-page" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="home-page" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="product-page" href="product.html">甜點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="login-page" href="login.html">登入</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="login-page" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+    <!-- content -->
+    <section class="container d-md-block d-none">
+        <div class="row my-5 mx-auto justify-content-center">
+            <!-- login -->
+            <div class="col-lg-4 col-md-6 col">
+                <div class="bg-primary row">
+                    <p class="h1 text-success text-center my-4">會員登入</p>
+                    <form class="px-4">
+                        <div class="input-group mb-3">
+                            <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                            <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                            <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
+                        </div>
+                         <div class="mb-3">
+                            <input type="checkbox" class="rounded-0 form-check-input" id="exampleCheck1">
+                            <label class="form-check-label text-success fw-bold mx-2" for="exampleCheck1">記住我</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">登入帳號</button>
+                </div>
+            </div>
+            <!-- connect to social media account -->
+            <div class="col-lg-4 col-md-6 col bg-success my-3">
+                <!-- title -->
+                <div class="position-relative py-5 px-5">
+                    <span class="text-secondary h4 mb-0 bg-success position-absolute translate-middle start-50"> 連結社群帳號 </span>
+                    <div class="progress" style="height: 2px;">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <ul class="px-3 row">
+                    <li><a href="" class="text-center my-2 py-3 bg-white d-block" target="_blank"><img src="./assets/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
+                    <li><a href="" class="text-center my-2 py-3 bg-white d-block " target="_blank"><img src="./assets/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
+                    <li><a href="" class="text-center my-2 py-3 bg-white d-block" target="_blank"><img src="./assets/ic-yahoo.svg" alt="YAHOO!" style="width: 108px; height: 20px;"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- mobile content -->
+    <section class="d-md-none bg-primary">
+        <!-- title -->
+        <h1 class="mb-0 fw-bold text-success text-center py-4">會員登入</h1>
+        <ul class="p-5 d-flex justify-content-around bg-success">
+            <li><a href="" class="text-center my-2 p-2 bg-white d-block" target="_blank"><img src="./assets/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
+            <li><a href="" class="text-center my-2 p-2 bg-white d-block " target="_blank"><img src="./assets/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
+            <li><a href="" class="text-center my-2 p-2 bg-white d-block" target="_blank"><img src="./assets/ic-yahoo.svg" alt="YAHOO!" style="width: 108px; height: 20px;"></a></li>
+        </ul>
+            <form class="px-4 p-4">
+                <div class="input-group mb-3">
+                    <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                    <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+                </div>
+                <div class="input-group mb-3">
+                    <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                    <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
+                </div>
+                 <div class="mb-3">
+                    <input type="checkbox" class="rounded-0 form-check-input" id="exampleCheck1">
+                    <label class="form-check-label text-success fw-bold mx-2" for="exampleCheck1">記住我</label>
+                </div>
+            </form>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">登入帳號</button>
+            </div>
+            
+    </section>
+    
+    <!-- footer -->
+      <footer>
+        <!-- email subscribe -->
+        <div class="bg-primary py-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <!-- subscribe quote -->
+              <div class="col-lg-5 col-md-6 col-10 d-flex align-items-center justify-content-md-start justify-content-center pb-3 pb-md-0">
+                <img src="./assets/logo-light.svg" style="width: 40px; height: 40px;" alt="email-subscribe-logo">
+                <p class="text-success px-3 fs-4 mb-0">訂閱你我的甜蜜郵件</p>
+              </div>
+              <!-- email input section -->
+              <div class="col-lg-5 col-md-6 col-10">
+                <div class="input-group">
+                  <label for="email" class="rounded-0 input-group-text email-input-icon bg-success"><i class="fas fa-envelope"></i></label>
+                  <input id="email" type="email" class="form-control input-style">
+                  <button class="btn btn-info text-primary rounded-0" type="button"><i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <!-- information -->
+        <div class="bg-success pt-5 pb-3">
+          <div class="container px-5">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-column justify-content-between">
+               <div>
+                  <img src="./assets/logotype-lg-dark.svg" style="height: 27px; width: 172px;" alt="footer-logo">
+                </div>
+                  <p class="fw-bold mt-5 mb-3 mb-md-0">07-1234-5678 <br>sweetaste@email.com <br>800 高雄市新興區幸福路 520 號</p>
+              </div>
+              <div class="d-md-block d-none"><img src="./assets/sm-今天是個吃甜點的好日子.svg" alt="footer-quote" style="width: 60px; height: 220px;"></div>
+            </div>
+            <div class="d-md-flex justify-content-between align-items-center py-4">
+              <div class="d-flex">
+                <a href="https://www.google.com.tw/" target="_blank"><img src="./assets/ic-line@.svg" alt="line-icon" style="width: 32px; height: 32px;"></a>
+                <a href="https://www.facebook.com/" target="_blank" class="px-3"><img src="./assets/ic-facebook.svg" alt="facebook-icon" style="width: 32px; height: 32px;"></a>
+              </div>
+              <p class="mt-3 m-md-0">
+                <a href="https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page">設計稿來源</a>
+                 © 2018 Sweetaste* All Rights Reserved
+                </p>
+            </div>
+          </div>
+          
+        </div>
+      </footer>
+    <!-- bootstrap js file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
