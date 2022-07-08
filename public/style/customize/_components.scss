@@ -143,3 +143,12 @@
         width: 80px;
     }
 }
+
+.form-link{
+    color: $success;
+    text-decoration: underline;
+    transition: all 0.2s ease-in;
+    &:hover{
+        color: $info;
+    }
+}

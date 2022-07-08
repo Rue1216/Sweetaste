@@ -1,0 +1,75 @@
+<% layout("../layout/layout") %> 
+ <!-- content -->
+ <section class="container d-md-block d-none">
+    <div class="row my-5 mx-auto justify-content-center">
+        <!-- login -->
+        <div class="col-lg-4 col-md-6 col">
+            <div class="bg-primary row">
+                <p class="h1 text-success text-center my-4">會員登入</p>
+                <form class="px-4">
+                    <div class="input-group mb-3">
+                        <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                        <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                        <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
+                    </div>
+                    <div class="mb-3">
+                        <a class="form-link" href="/signup">還沒註冊過？</a>
+                    </div>
+                    <div class="mb-3">
+                        <input type="checkbox" class="rounded-0 form-check-input" id="exampleCheck1">
+                        <label class="form-check-label text-success fw-bold mx-2" for="exampleCheck1">記住我</label>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">登入</button>
+            </div>
+        </div>
+        <!-- connect to social media account -->
+        <div class="col-lg-4 col-md-6 col bg-success my-5">
+            <div class="position-relative py-5 px-5">
+                <span class="text-secondary h4 mb-0 bg-success position-absolute translate-middle start-50"> 使用社群帳號登入 </span>
+                <div class="progress" style="height: 2px;">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <ul class="px-3 row">
+                <li><a href="" class="text-center my-2 py-3 bg-white d-block" target="_blank"><img src="./images/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
+                <li><a href="" class="text-center my-2 py-3 bg-white d-block " target="_blank"><img src="./images/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- mobile content -->
+<section class="d-md-none bg-primary">
+    <!-- title -->
+    <h1 class="mb-0 fw-bold text-success text-center py-4">會員登入</h1>
+    <ul class="p-5 d-flex justify-content-around bg-success">
+        <li><a href="" class="text-center my-2 p-2 bg-white d-block" target="_blank"><img src="./images/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
+        <li><a href="" class="text-center my-2 p-2 bg-white d-block " target="_blank"><img src="./images/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
+    </ul>
+        <form class="px-4 p-4">
+            <div class="input-group mb-3">
+                <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+            </div>
+            <div class="input-group mb-3">
+                <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
+            </div>
+            <div class="mb-3">
+                <a class="form-link" href="/signup">還沒註冊過？</a>
+            </div>
+             <div class="mb-3">
+                <input type="checkbox" class="rounded-0 form-check-input" id="exampleCheck1">
+                <label class="form-check-label text-success fw-bold mx-2" for="exampleCheck1">記住我</label>
+            </div>
+        </form>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">登入帳號</button>
+        </div>
+        
+</section>

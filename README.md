@@ -1,12 +1,16 @@
-# 切版練習-甜點電商 Sweetaste*
+# 甜點電商網 Sweetaste*
 
-這是我第一次使用[設計稿](https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page)寫出來的、簡易的電商網站。
-Demo:[點這裡](https://rue1216.github.io/sweetaste--practice/)
+[設計稿](https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page)
+[Demo 在這裡](https://rue1216.github.io/sweetaste--practice/)
 
-一開始的計畫是:
-切版完成 > 加入互動 > 加入資料庫
 
-但要看我實際走到實作還需要多少時間xDDDD
+## 流程和需求
+1. 切版完成(done)
+2. 會員驗證(in progress)
+    - 普通帳號密碼註冊
+    - 串接 Facebook、google 登入
+3. 訂閱郵件
+4. 購物車功能
 
 ## 更動紀錄
 - 2022/01/23 完成切版 (完成的時間大概是4天)
