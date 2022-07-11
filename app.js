@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-require('dotenv').config()
+const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 
 //views
@@ -14,9 +15,11 @@ app.set("view engine", "ejs");
 //static files
 app.use(express.static("public"));
 app.use('/checkout', express.static('public'));
+app.use(cookieParser());
 
 //parser
 app.use(express.json());
+app.use(express.urlencoded({extended:false}))
 
 // routes
 const indexRouter = require('./routes/index');
@@ -30,6 +33,7 @@ app.use('/products', productsRouter);
 app.use(authRouter);
 app.use('/cart',cartRouter);
 app.use('/checkout',checkoutRouter);
+
 
 // connect to mongoDB
 mongoose.connect(process.env.DB_URL,{

@@ -11131,4 +11131,8 @@ body p {
 }
 .form-link:hover {
   color: #FFE180;
+}
+
+.form-button {
+  width: 100%;
 }/*# sourceMappingURL=all.css.map */

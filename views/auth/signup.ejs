@@ -6,34 +6,38 @@
         <div class="col-lg-4 col-md-6 col">
             <div class="bg-primary row">
                 <p class="h1 text-success text-center my-4">會員註冊</p>
-                <form class="px-4">
-                    <div class="input-group mb-3">
-                        <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
-                        <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+                <form>
+                    <div class="row px-4">
+                        <div class="input-group mb-2">
+                            <label for="emailMd" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                            <input name="email" id="emailMd" placeholder="請輸入電子信箱" type="email" class="rounded-0 form-control input-style" required>
+                        </div>
+                        <div class="email error text-info"></div>
+                        <div class="input-group mt-3 mb-2">
+                            <label for="passwordMd" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                            <input name="password" id="passwordMd" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style" required>
+                        </div>
+                        <div class="password error text-info"></div>
+                        <div class="mb-3">
+                            <a class="form-link" href="/login">已經有帳號了？</a>
+                        </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
-                        <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
-                    </div>
-                    <div class="mb-3">
-                        <a class="form-link" href="/login">已經有帳號了？</a>
+                    <div class="row">
+                        <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">註冊帳號</button>
                     </div>
                 </form>
             </div>
-            <div class="row">
-                <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">註冊帳號</button>
-            </div>
+            
         </div>
         <!-- connect to social media account -->
         <div class="col-lg-4 col-md-6 col bg-success my-5">
-            <!-- title -->
             <div class="position-relative py-5 px-5">
                 <span class="text-secondary h4 mb-0 bg-success position-absolute translate-middle start-50"> 使用社群帳號註冊 </span>
                 <div class="progress" style="height: 2px;">
                     <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
-            <ul class="px-3 row">
+            <ul class="px-3">
                 <li><a href="" class="text-center my-2 py-3 bg-white d-block" target="_blank"><img src="./images/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
                 <li><a href="" class="text-center my-2 py-3 bg-white d-block " target="_blank"><img src="./images/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
             </ul>
@@ -48,21 +52,60 @@
         <li><a href="" class="text-center my-2 p-2 bg-white d-block" target="_blank"><img src="./images/ic-facebook-logotype.svg" alt="facebook" style="width: 108px; height: 20px;"></a></li>
         <li><a href="" class="text-center my-2 p-2 bg-white d-block " target="_blank"><img src="./images/ic-google.svg" alt="google" style="width: 108px; height: 20px;"></a></li>
     </ul>
-        <form class="px-4 p-4">
-            <div class="input-group mb-3">
-                <label for="id-number" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
-                <input id="id-number" placeholder="電子信箱/手機號碼" type="email number" class="rounded-0 form-control input-style">
+        <form class="p-4">
+            <div class="row">
+                <div class="input-group mb-3">
+                    <label for="emailSm" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
+                    <input name="email" id="emailSm" placeholder="請輸入電子信箱" type="email" class="rounded-0 form-control input-style" required>
+                </div>
+                <div class="email error"></div>
+                <div class="input-group mb-3">
+                    <label for="passwordSm" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
+                    <input name="password" id="passwordSm" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style" required>
+                </div>
+                <div class="password error"></div>
+                <div class="mb-3">
+                    <a class="form-link" href="/login">已經有帳號了？</a>
+                </div>
             </div>
-            <div class="input-group mb-3">
-                <label for="password" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
-                <input id="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style">
-            </div>
-            <div class="mb-3">
-                <a class="form-link" href="/login">已經有帳號了？</a>
-            </div>
+            <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3 form-button">註冊帳號</button>
         </form>
-        <div class="d-grid">
-            <button type="submit" class="btn btn-info text-primary fs-4 fw-bold rounded-0 py-3">註冊帳號</button>
-        </div>
-        
 </section>
+<script>
+    const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+
+    form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+
+        // reset errors
+        emailError.textContent = "";
+        passwordError.textContent = "";
+
+        // get the values
+        let email = form.email.value;
+        let password = form.password.value;
+        
+        try{
+            const res = await fetch('/signup',{
+                method:'POST',
+                body: JSON.stringify({email,password}),
+                headers:{ 'Content-Type': 'application/json'}
+            });
+            // error message
+            const data = await res.json();
+            // console.log(data);
+            if(data.errors){
+                emailError.textContent = data.errors.email;
+                passwordError.textContent = data.errors.password;
+            }
+            if(data.user){
+                location.assign('/');
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
+    })
+</script>
