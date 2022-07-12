@@ -84,3 +84,11 @@ module.exports.login_post = async (req,res)=>{
         res.status(400).json({ errors });
     }
 }
+
+// logout users
+module.exports.logout_get = (req,res)=>{
+    // delete jwt cookie => replace with a blank cookie which expires quickly
+    res.cookie('jwt', { maxAge: 1});
+    // redirect to homepage
+    res.redirect('/');
+}
