@@ -8,12 +8,24 @@ const jwt = require('jsonwebtoken');
 const handleErrors = (err) =>{
     // err.message > output error messages set in User model
     // err.code > error type
-    console.log(err.message, err.code);
+    // console.log(err.message, err.code);
     let errors = { email: '', password: ''};
 
     // error code 11000 for duplicate registers
     if(err.code === 11000){
-        errors.email = "That email is already registered.";
+        errors.email = "此信箱已被使用";
+        return errors;
+    }
+
+    //wrong email
+    if(err.message === '電子信箱錯誤'){
+        errors.email = '此信箱尚未註冊';
+        return errors;
+    }
+
+    //wrong password
+    if(err.message === '密碼錯誤'){
+        errors.password = '輸入密碼錯誤';
         return errors;
     }
 
@@ -58,9 +70,17 @@ module.exports.signup_post = async (req,res)=>{
     }
 }
 
-module.exports.login_post = (req,res)=>{
+module.exports.login_post = async (req,res)=>{
     const { email, password } = req.body;
-    console.log(email)
-    console.log(password)
-    res.send('user login')
+    
+    try{
+        const user = await User.login(email, password);
+        const token = createToken(user._id);
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000});
+        res.status(200).json({ user: user._id })
+    }
+    catch(err){
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
+    }
 }

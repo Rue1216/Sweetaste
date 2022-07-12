@@ -8,14 +8,16 @@
                 <p class="h1 text-success text-center my-4">會員登入</p>
                 <form class="md-form">
                     <div class="row px-4">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <label for="emailMd" class=" p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-user"></i></label>
                             <input id="emailMd" name="email" placeholder="請輸入電子信箱" type="email" class="rounded-0 form-control input-style" required>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="email error text-info"></div>
+                        <div class="input-group mt-3 mb-2">
                             <label for="passwordMd" class="p-4 rounded-0 input-group-text bg-success email-input-icon"><i class="fas fa-key"></i></label>
                             <input id="passwordMd" name="password" placeholder="請輸入使用者密碼" type="password" class="rounded-0 form-control input-style" required>
                         </div>
+                        <div class="password error text-info"></div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between">
                                 <div>
@@ -82,25 +84,40 @@
             
 </section>
 <script>
-    const mdForm = document.querySelector('.md-form');
-    const smForm = document.querySelector('.sm-form');
+   const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
 
-    mdForm.addEventListener('submit', (e)=>{
+    form.addEventListener('submit', async (e)=>{
         e.preventDefault();
 
-        // get the values
-        const email = mdForm.email.value;
-        const password = mdForm.password.value;
-        console.log(email, password);
-    })
-    
-
-    smForm.addEventListener('submit', (e)=>{
-        e.preventDefault();
+        // reset errors
+        emailError.textContent = "";
+        passwordError.textContent = "";
 
         // get the values
-        const email = smForm.email.value;
-        const password = smForm.password.value;
-        console.log(email, password);
+        let email = form.email.value;
+        let password = form.password.value;
+        
+        try{
+            const res = await fetch('/login',{
+                method:'POST',
+                body: JSON.stringify({email,password}),
+                headers:{ 'Content-Type': 'application/json'}
+            });
+            // error message
+            const data = await res.json();
+            // console.log(data);
+            if(data.errors){
+                emailError.textContent = data.errors.email;
+                passwordError.textContent = data.errors.password;
+            }
+            if(data.user){
+                location.assign('/');
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
     })
 </script>
