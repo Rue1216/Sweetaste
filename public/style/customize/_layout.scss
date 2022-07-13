@@ -12,6 +12,44 @@ body{
 .navbar-collapse{
     flex-grow: 0;
 }
+// nav bar transition
+.nav-effect{
+      li{
+        margin: 0 auto;
+        padding-bottom: 1px;
+        position: relative;
+        width: 100px;
+        overflow: hidden;
+        &::after{
+            content:'';
+            position: absolute;
+            left: 40%;
+            bottom: 0;
+            margin: 0 -50px;
+        }
+      }
+      li:hover::after{
+        animation:effect 1s ease;
+        border: 4px solid $success;
+        width: 0%;
+      }
+      a{
+        text-align:center;
+      }
+      @keyframes effect{
+        0%{
+          width: 0;
+        }
+        50%{
+          width: 100%;
+        }
+        100%{
+          margin-left:60px;
+        }
+      }    
+}
+  
+
 
 .text-hidden{
     text-indent: 101%;
