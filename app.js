@@ -2,9 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
+const connection = require('./db')
 const cookieParser = require('cookie-parser');
 
+// connect to mongoDB
+connection();
 
 
 //views
@@ -39,15 +41,6 @@ app.use('/cart',cartRouter);
 app.use('/checkout',checkoutRouter);
 
 
-// connect to mongoDB
-mongoose.connect(process.env.DB_URL,{
-    useNewUrlParser: true,
-});
-const db = mongoose.connection;
-db.on('error', (error) => console.log(error));
-db.once('open', () => console.log('connected to database.'));
-
-
 //listen to the port
 let port = process.env.PORT || 3000;
-app.listen(port, ()=> console.log('server is running.'));
+app.listen(port, ()=> console.log(`Listening on port ${port}...`));
