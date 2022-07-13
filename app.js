@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-require('dotenv').config();
+
 
 
 //views
@@ -27,7 +29,9 @@ const productsRouter = require('./routes/products');
 const authRouter = require('./routes/auth');
 const cartRouter = require('./routes/cart');
 const checkoutRouter = require('./routes/checkout');
+const { checkUser } = require('./middleware/authMiddleware');
 
+app.get('*', checkUser);
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use(authRouter);

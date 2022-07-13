@@ -10,18 +10,36 @@
       <a class="link-success text-primary fw-bold d-md-none" aria-current="cart-page" href="/cart"><i class="fas fa-shopping-cart"></i></a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link text-primary fw-bold px-4" aria-current="home-page" href="/">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary fw-bold px-4" aria-current="product-page" href="/products">甜點</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary fw-bold px-4" aria-current="login-page" href="/login">登入</a>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <a class="nav-link text-primary fw-bold px-4" aria-current="login-page" href="/cart"><i class="fas fa-shopping-cart"></i></a>
-          </li>
+          <% if(user){ %>
+            <li class="nav-item">
+              歡迎光臨， <%= user.email %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="home-page" href="/">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="product-page" href="/products">甜點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="logout" href="/logout">登出</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="cart-page" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+          <% }else{ %> 
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="home-page" href="/">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="product-page" href="/products">甜點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="login-page" href="/login">登入</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link text-primary fw-bold px-4" aria-current="cart-page" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+          <% } %> 
         </ul>
       </div>
       
