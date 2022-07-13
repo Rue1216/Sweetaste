@@ -85,6 +85,22 @@ module.exports.login_post = async (req,res)=>{
     }
 }
 
+//forgot password
+module.exports.forgot_get = (req,res)=>{
+    res.render('auth/forgot')
+}
+
+module.exports.passwordReset_get = (req,res)=>{
+    res.render('auth/resetPassword')
+}
+module.exports.forgot_post = (req,res)=>{
+    // send link
+}
+
+module.exports.passwordReset_post = (req,res)=>{
+    // reset password
+}
+
 // logout users
 module.exports.logout_get = (req,res)=>{
     // delete jwt cookie => replace with a blank cookie which expires quickly
