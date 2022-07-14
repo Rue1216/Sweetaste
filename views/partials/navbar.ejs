@@ -11,9 +11,7 @@
       <div class="nav-effect collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 align-items-center justify-content-end">
           <% if(user){ %>
-            <li class="nav-item">
-              歡迎光臨， <%= user.email %>
-            </li>
+            <p>歡迎光臨， <%= user.email %></p>
             <li class="nav-item">
               <a class="nav-link text-primary fw-bold px-4" aria-current="home-page" href="/">首頁</a>
             </li>
