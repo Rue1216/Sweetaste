@@ -40,6 +40,16 @@ app.use(authRouter);
 app.use('/cart',cartRouter);
 app.use('/checkout',checkoutRouter);
 
+//404 pages 
+app.use(function (req, res, next) {
+    res.status(404).render('error');
+})
+
+//not getting the correct resources
+app.use((err, req, res, next)=>{
+    console.error(err.stack);
+    res.status(500).render('serverErr');
+})
 
 //listen to the port
 let port = process.env.PORT || 3000;

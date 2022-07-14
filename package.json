@@ -2,7 +2,7 @@
   "name": "sweetaste",
   "version": "1.0.0",
   "description": "這是我第一次使用[設計稿](https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page)寫出來的、簡易的電商網站。\r Demo:[點這裡](https://rue1216.github.io/sweetaste--practice/)",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
