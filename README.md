@@ -1,16 +1,21 @@
 # 甜點電商網 Sweetaste*
 
 [設計稿](https://www.behance.net/gallery/74192331/-PK-E-commerce-Web-Page)
-[Demo 在這裡](https://rue1216.github.io/sweetaste--practice/)
+[Demo 在這裡](https://sweetaste-allyouwantishere.herokuapp.com/)
 
 
 ## 流程和需求
 1. 切版完成(done)
-2. 會員驗證(in progress)
-    - 普通帳號密碼註冊
+2. 會員驗證
+    - 普通帳號密碼註冊、資料庫存取 (done)
+    - 註冊須通過 recaptcha 機器人驗證 (in progress)
     - 串接 Facebook、google 登入
-3. 訂閱郵件
+3. 寄送郵件
+    - 和前面的會員驗證系統搭配，製作忘記密碼/重設密碼的功能
+    - 訂閱電子郵件
 4. 購物車功能
+    - 商品頁、 model 建立
+    - 購物車 UI 介接
 
 ## 更動紀錄
 - 2022/01/23 完成切版 (完成的時間大概是4天)
