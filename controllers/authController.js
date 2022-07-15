@@ -4,6 +4,8 @@ const User = require('../models/User');
 //jwt
 const jwt = require('jsonwebtoken');
 
+const { stringify } = require('querystring')
+
 // error handlers
 const handleErrors = (err) =>{
     // err.message > output error messages set in User model
@@ -42,18 +44,14 @@ const handleErrors = (err) =>{
 // create tokens
 const maxAge = 3*24*60*60; // 3 days
 const createToken = (id) =>{
-    return jwt.sign({ id }, 'secret for sweetaste',{
+    return jwt.sign({ id }, process.env.SECRET_KEY,{
         expiresIn: maxAge,
     })
 }
 
 // auth routes
-module.exports.signup_get = (req,res)=>{
-    res.render('auth/signup')
-}
-module.exports.login_get = (req,res)=>{
-    res.render('auth/login')
-}
+module.exports.signup_get = (req,res)=>{ res.render('auth/signup') }
+module.exports.login_get = (req,res)=>{ res.render('auth/login') }
 module.exports.signup_post = async (req,res)=>{
     const { email, password } = req.body;
     
@@ -86,15 +84,23 @@ module.exports.login_post = async (req,res)=>{
 }
 
 //forgot password
-module.exports.forgot_get = (req,res)=>{
-    res.render('auth/forgot')
-}
-
-module.exports.passwordReset_get = (req,res)=>{
-    res.render('auth/resetPassword')
-}
-module.exports.forgot_post = (req,res)=>{
-    // send link
+module.exports.forgot_get = (req,res)=>{ res.render('auth/forgot') }
+module.exports.passwordReset_get = (req,res)=>{ res.render('auth/resetPassword') }
+module.exports.forgot_post = async (req,res)=>{
+    const { email } = req.body;
+    try {
+        const userEmail = await User.exists({ email });
+        if(userEmail){
+            res.send('user exists');
+        }
+        else{
+            res.send('user not existed');
+        }
+        
+    } catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({errors});
+    }
 }
 
 module.exports.passwordReset_post = (req,res)=>{
@@ -106,5 +112,5 @@ module.exports.logout_get = (req,res)=>{
     // delete jwt cookie => replace with a blank cookie which expires quickly
     res.cookie('jwt', { maxAge: 1});
     // redirect to homepage
-    res.redirect('/');
+    res.redirect('/')
 }

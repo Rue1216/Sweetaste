@@ -19,10 +19,10 @@
           <div class="col-lg-4 col-md-12 text-center g-0 gx-md-5">
             <p class="bg-primary fw-bold text-success h4 py-3 mb-0">甜點類別</p>
             <ul class="p-0 border border-2">
-              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=" value="">所有甜點（48）</a></li>
-              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=本日精選" value="本日精選">本日精選（10）</a></li>
-              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=人氣推薦" value="人氣推薦">人氣推薦（26）</a></li>
-              <li><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=新品上市" value="新品上市">新品上市（12）</a></li>
+              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=" value="">所有甜點（<%= counts.allCounts %>）</a></li>
+              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=本日精選" value="本日精選">本日精選（<%= counts.specialCounts %>）</a></li>
+              <li class=" border-bottom border-2"><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=人氣推薦" value="人氣推薦">人氣推薦（<%= counts.hotCounts %>）</a></li>
+              <li><a class="d-block text-primary fw-bold h4 mb-0 py-3 product-menu-hover" href="/products?category=新品上市" value="新品上市">新品上市（<%= counts.newCounts %>）</a></li>
             </ul>
           </div>
           <!-- main menu display -->

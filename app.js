@@ -31,14 +31,14 @@ const productsRouter = require('./routes/products');
 const authRouter = require('./routes/auth');
 const cartRouter = require('./routes/cart');
 const checkoutRouter = require('./routes/checkout');
-const { checkUser } = require('./middleware/authMiddleware');
+const { checkUser, requireAuth } = require('./middleware/authMiddleware');
 
 app.get('*', checkUser);
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use(authRouter);
 app.use('/cart',cartRouter);
-app.use('/checkout',checkoutRouter);
+app.use('/checkout', requireAuth, checkoutRouter);
 
 //404 pages 
 app.use(function (req, res, next) {

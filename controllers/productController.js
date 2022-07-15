@@ -3,7 +3,15 @@ const Product = require('../models/Product/Product');
 
 module.exports.allProducts_get = async (req,res)=>{
     try {
+        // count the number of products
+        let specialCounts = await Product.count({ category: '本日精選'});
+        let hotCounts = await Product.count({ category: '人氣推薦'});
+        let newCounts = await Product.count({ category: '新品上市'});
+        let allCounts = await Product.count({});
+        
+        // sort product by categories
         const { category } = req.query;
+        // pass products to views with corresponding category
         let products;
         if (category === "" | !category){
             products = await Product.find({});
@@ -19,6 +27,12 @@ module.exports.allProducts_get = async (req,res)=>{
         }
         res.render('products/products',{
             products: products,
+            counts:{
+                specialCounts,
+                hotCounts,
+                newCounts,
+                allCounts
+            },
             searchOptions : req.query
         });
 
