@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     },
     category:{
         type: String,
-        value: ['special', 'hot', 'new'],
+        value: ['本日精選', '人氣推薦', '新品上市'],
     },
     countInStock:{
         type: Number,

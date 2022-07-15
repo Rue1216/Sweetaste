@@ -10,25 +10,24 @@
         <div class="row justify-content-center">
           <div class="col img-md-menu">
             <div class="row justify-content-center flex-nowrap">
-              <a class="col-4 bg-cover img-menu-square d-flex" href="">
+              <a class="col-4 bg-cover img-menu-square d-flex" href="/products?category=本日精選">
                 <h2 class="info-menu align-self-center mx-auto">本日精選</h2>
                 <div class="img-menu-bg">
                   <div class="img-menu-blur" style="background-image: url(https://bit.ly/2R5tqwD);"></div>
                 </div>
               </a>
-              <a class="col-4 bg-cover img-menu-square d-flex" href="">
+              <a class="col-4 bg-cover img-menu-square d-flex" href="/products?category=人氣推薦">
                 <h2 class="info-menu align-self-center mx-auto">人氣推薦</h2>
                 <div class="img-menu-bg">
                   <div class="img-menu-blur" style="background-image: url(https://bit.ly/2Dwoxd7);"></div>
                 </div>
 
               </a>
-              <a class="col-4 bg-cover img-menu-square d-flex" href="">
+              <a class="col-4 bg-cover img-menu-square d-flex" href="/products?category=新品上市">
                 <h2 class="info-menu align-self-center mx-auto ">新品上市</h2>
                 <div class="img-menu-bg">
                   <div class="img-menu-blur" style="background-image: url(https://bit.ly/2OUteif);"></div>
                 </div>
-
               </a>
             </div>
           </div>
@@ -92,40 +91,20 @@
       </section>
 
       <!-- product-quick-buying -->
-      <section class="container my-5">
-        <ul class="row p-0">
-          <li class="col-lg-4 col-md-6 col-8 mx-auto">
-              <div class="bg-cover position-relative" style="background-image: url(https://bit.ly/2zBjQuq); height: 315px;">
-                <span class="bg-primary text-success info-label position-absolute">本日精選</span>
-                <i class="far fa-heart position-absolute info-heart"></i>
-              </div>
-              <div class="d-flex border border-1 border-success">
-                <h3 class="m-0 py-3 h5 text-center col-6 border-end border-1 border-success fw-bold">焦糖甜甜圈</h3>
-                <p class="m-0 py-3 h5 fw-bold text-center col-6">$450</p>
-              </div>
-              <a href="" class="py-3 btn btn-success btn-hover text-primary fw-bold d-block fs-4 rounded-0">加入購物車</a>
-          </li>
-          <li class="col-lg-4 col-md-6 d-none d-md-block">
-            <div class="bg-cover position-relative" style="background-image: url(https://bit.ly/2zBDAxX); height: 315px;">
-              <span class="bg-primary text-success info-label position-absolute">本日精選</span>
-              <i class="far fa-heart position-absolute info-heart"></i>
-            </div>
-            <div class="d-flex border border-1 border-success">
-              <h3 class="m-0 py-3 h5 text-center col-6 border-end border-1 border-success fw-bold">奶油草莓派</h3>
-              <p class="m-0 py-3 h5 fw-bold text-center col-6">$450</p>
-            </div>
-            <a href="" class="py-3 btn btn-success btn-hover text-primary fw-bold d-block fs-4 rounded-0">加入購物車</a>
-        </li>
-        <li class="col-lg-4 d-none d-lg-block">
-          <div class="bg-cover position-relative" style="background-image: url(https://bit.ly/2QbVsVR); height: 315px;">
-            <span class="bg-primary text-success info-label position-absolute">本日精選</span>
-            <i class="far fa-heart position-absolute info-heart"></i>
-          </div>
-          <div class="d-flex border border-1 border-success">
-            <h3 class="m-0 py-3 h5 text-center col-6 border-end border-1 border-success fw-bold">藍莓百香凍</h3>
-            <p class="m-0 py-3 h5 fw-bold text-center col-6">$450</p>
-          </div>
-          <a href="" class="py-3 btn btn-success btn-hover text-primary fw-bold d-block fs-4 rounded-0">加入購物車</a>
-      </li>
+      <section class="container my-5 my-lg-0 g-md-5">
+        <ul class="row p-0 justify-content-center">
+          <% products.forEach( product=>{ %> 
+            <li class="col-lg-4 col-md-6 col-11 mx-auto mb-4">
+                <div class="bg-cover position-relative" style="background-image: url('<%= product.imgUrl %>'); height: 315px;">
+                  <span class="bg-primary text-success info-label position-absolute"><%= product.category %></span>
+                  <i class="far fa-heart position-absolute info-heart"></i>
+                </div>
+                <div class="d-flex border border-1 border-success">
+                  <h3 class="m-0 py-3 h5 text-center col-6 border-end border-1 border-success fw-bold"><%= product.name %> </h3>
+                  <p class="m-0 py-3 h5 fw-bold text-center col-6">$<%= product.price %> </p>
+                </div>
+                <a href="" class="py-3 btn btn-success btn-hover text-primary fw-bold d-block fs-4 rounded-0">加入購物車</a>
+            </li>
+          <% }) %> 
         </ul>
       </section>

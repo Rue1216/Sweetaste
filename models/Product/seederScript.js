@@ -1,6 +1,10 @@
 require('dotenv').config();
 
-const productData = require('./data/products');
+// import products data
+const special_productData = require('./data/special');
+const hot_productData = require('./data/hot');
+const new_productData = require('./data/new');
+
 const connection = require('../../db');
 const product = require('./Product');
 
@@ -11,7 +15,9 @@ const importData = async () => {
     try {
         // import data
         await product.deleteMany({});
-        await product.insertMany(productData);
+        await product.insertMany( special_productData );
+        await product.insertMany( hot_productData );
+        await product.insertMany( new_productData );
 
         console.log('data import success');
         process.exit();
